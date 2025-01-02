@@ -19,4 +19,7 @@ export class Books {
     @Column()
     rating: number
 
+    @Column()
+    price: number
+
 }

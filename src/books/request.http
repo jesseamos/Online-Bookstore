@@ -3,24 +3,32 @@ POST  http://localhost:3000/books
 Content-Type: application/json
 
 {
-    "title":"Black Boy",
-    "overview":"A biography on richard wright",
-    "author":"Richard Wright",
-    "genres":["biography"],
-    "rating":9.0
+  "title": "Book Title",
+  "overview": "An engaging overview.",
+  "rating": 4.5,
+  "author": "Author Name",
+  "genres": ["Fiction", "Adventure"],
+  "price": 19.99
 }
 
 ####GET ALL THE BOOKS
 GET http://localhost:3000/books
 
+
+###GET A SINGLE BOOK
+GET  http://localhost:3000/books/1
 #### UPDDATE A BOOK
 PUT http://localhost:3000/books/1
 Content-Type: application/json
 
 {
-    "title":"Brown Boy",
-    "overview":"A biography on richard wright",
-    "author":"Richard Wright",
-    "genres":["biography"],
-    "rating":9.0
+  "title": "Updated Title",
+  "overview": "Updated overview.",
+  "rating": 4.7,
+  "author": "Updated Author",
+  "genres": ["Drama", "History"],
+  "price": 22.99
 }
+
+###DELETE A BOOK
+DELETE  http://localhost:3000/books/1

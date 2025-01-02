@@ -15,4 +15,7 @@ export class BooksDto {
 
     @IsNumber()
     rating: number
+
+    @IsNumber()
+    price: number
 }

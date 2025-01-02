@@ -8,6 +8,7 @@ import { BooksDto } from './dtos/books.dto';
 export class BooksService {
     constructor(@InjectRepository(Books) private repo: Repository<Books>) { }
 
+    //Find all the Books
     findAll() {
         return this.repo.find()
     }
@@ -15,6 +16,13 @@ export class BooksService {
         const books = this.repo.create(body)
         this.repo.save(books)
         return books
+    }
+    findOne(id: string) {
+        const book = this.repo.findBy({ id: parseInt(id) })
+        if (!book) {
+            throw new NotFoundException("Can't find book with id:" + id)
+        }
+        return book
     }
     update(id: string, body: BooksDto) {
         const book = this.repo.findBy({ id: parseInt(id) })
@@ -30,6 +38,7 @@ export class BooksService {
             throw new NotFoundException("Can't find book with id:" + id)
         }
         this.repo.delete(id)
+        return { message: "Book deleted successfully." }
     }
 
 }

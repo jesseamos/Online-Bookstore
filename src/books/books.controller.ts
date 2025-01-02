@@ -10,6 +10,11 @@ export class BooksController {
         return this.booksService.findAll()
     }
 
+    @Get('/:id')
+    getOneBook(@Param('id') id: string) {
+        return this.booksService.findOne(id)
+    }
+
     @Post()
     createBook(@Body() body: BooksDto) {
         return this.booksService.create(body)
@@ -24,5 +29,7 @@ export class BooksController {
     deleteBooks(@Param("id") id: string) {
         return this.booksService.delete(id)
     }
+
+
 }
 
