@@ -1,0 +1,26 @@
+### CREATE A ONLINE BOOK
+POST  http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "title":"Black Boy",
+    "overview":"A biography on richard wright",
+    "author":"Richard Wright",
+    "genres":["biography"],
+    "rating":9.0
+}
+
+####GET ALL THE BOOKS
+GET http://localhost:3000/books
+
+#### UPDDATE A BOOK
+PUT http://localhost:3000/books/1
+Content-Type: application/json
+
+{
+    "title":"Brown Boy",
+    "overview":"A biography on richard wright",
+    "author":"Richard Wright",
+    "genres":["biography"],
+    "rating":9.0
+}
